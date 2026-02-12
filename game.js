@@ -7,7 +7,7 @@ const rl = readline.createInterface({
 });
 
 const numeroSecreto = Math.floor(Math.random() * 100) + 1;
-console.log("¡Bienvenido! Adivina el número del 1 al 100.");
+console.log("JUEGO DE ADIVINANZAS.");
 
 const preguntar = () => {
   rl.question('Ingresa tu número: ', (respuesta) => {
