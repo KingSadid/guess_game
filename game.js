@@ -22,13 +22,13 @@ const preguntar = () => {
 
      
       if (diferencia <= 2) {
-        console.log("-> ¡TE QUEMAS! Estás hirviendo (muy cerca).");
+        console.log("->Estás hirviendo .");
       } else if (diferencia <= 5) {
         console.log("-> ¡Caliente! Estás cerca.");
       } else if (diferencia <= 10) {
         console.log("-> Tibio... ni cerca ni lejos.");
       } else {
-        console.log("-> ¡Congelado! Estás muy lejos.");
+        console.log("-> ¡Congelado!.");
       }
 
      
