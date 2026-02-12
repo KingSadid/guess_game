@@ -5,10 +5,9 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
 const numeroSecreto = Math.floor(Math.random() * 20) + 1;
 
-console.log("¡Bienvenido al SUPER JUEGO DE ADIVINANZA v2.0!");
+console.log("¡Bienvenido al SUPER JUEGO DE ADIVINANZA v3.0 (Final)!");
 console.log("He pensado un número del 1 al 20. ¿Puedes adivinarlo?");
 
 const preguntar = () => {
@@ -19,18 +18,24 @@ const preguntar = () => {
       console.log("¡Felicidades! Adivinaste el número.");
       rl.close();
     } else {
-      
-      if (Math.abs(numeroSecreto - numeroUsuario) <= 5) {
-        console.log("-> ¡Caliente! Estás muy cerca.");
+      const diferencia = Math.abs(numeroSecreto - numeroUsuario);
+
+     
+      if (diferencia <= 2) {
+        console.log("-> ¡TE QUEMAS! Estás hirviendo (muy cerca).");
+      } else if (diferencia <= 5) {
+        console.log("-> ¡Caliente! Estás cerca.");
+      } else if (diferencia <= 10) {
+        console.log("-> Tibio... ni cerca ni lejos.");
       } else {
-        console.log("-> Frío... estás lejos.");
+        console.log("-> ¡Congelado! Estás muy lejos.");
       }
 
-      
+     
       if (numeroUsuario < numeroSecreto) {
-        console.log("   Pista: El número secreto es MAYOR.");
+        console.log("   Pista: Busca un número MAYOR.");
       } else {
-        console.log("   Pista: El número secreto es MENOR.");
+        console.log("   Pista: Busca un número MENOR.");
       }
 
       preguntar();
