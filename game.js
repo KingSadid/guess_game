@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 const numeroSecreto = Math.floor(Math.random() * 20) + 1;
 
 console.log("¡Bienvenido al SUPER JUEGO DE ADIVINANZA v3.0 (Final)!");
-console.log("He pensado un número del 1 al 20. ¿Puedes adivinarlo?");
+console.log("Adivina el número del 1 al 20.");
 
 const preguntar = () => {
   rl.question('Ingresa tu número: ', (respuesta) => {
