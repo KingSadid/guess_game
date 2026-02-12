@@ -5,42 +5,40 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const numeroSecreto = Math.floor(Math.random() * 20) + 1;
+const secretNumber = Math.floor(Math.random() * 20) + 1;
 
 console.log("¡Bienvenido al SUPER JUEGO DE ADIVINANZA v3.0 (Final)!");
 console.log("Adivina el número del 1 al 20.");
 
-const preguntar = () => {
-  rl.question('Ingresa tu número: ', (respuesta) => {
-    const numeroUsuario = parseInt(respuesta);
+const ask = () => {
+  rl.question('Ingresa tu número: ', (answer) => {
+    const userNumber = parseInt(answer);
 
-    if (numeroUsuario === numeroSecreto) {
+    if (userNumber === secretNumber) {
       console.log("¡Felicidades! Adivinaste el número.");
       rl.close();
     } else {
-      const diferencia = Math.abs(numeroSecreto - numeroUsuario);
+      const difference = Math.abs(secretNumber - userNumber);
 
-     
-      if (diferencia <= 2) {
-        console.log("->Estás hirviendo .");
-      } else if (diferencia <= 5) {
+      if (difference <= 2) {
+        console.log("-> ¡Estás hirviendo!");
+      } else if (difference <= 5) {
         console.log("-> ¡Caliente! Estás cerca.");
-      } else if (diferencia <= 10) {
+      } else if (difference <= 10) {
         console.log("-> Tibio... ni cerca ni lejos.");
       } else {
-        console.log("-> ¡Congelado!.");
+        console.log("-> ¡Congelado!");
       }
 
-     
-      if (numeroUsuario < numeroSecreto) {
+      if (userNumber < secretNumber) {
         console.log("   Pista: Busca un número MAYOR.");
       } else {
         console.log("   Pista: Busca un número MENOR.");
       }
 
-      preguntar();
+      ask();
     }
   });
 };
 
-preguntar();
+ask();
